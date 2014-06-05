@@ -10,12 +10,12 @@
   </form>
 
   <ul ng-repeat="book in books">
-    <form ng-show="editing" ng-submit="editing = false">
+    <form ng-show="editing" ng-submit="editBook()">
       <input type="text" ng-model="book.title" placeholder="Title">
       <input type="text" ng-model="book.author" placeholder="Author">
       <input type="text" ng-model="book.description" placeholder="Description">
       <input type="text" ng-model="book.isbn" placeholder="ISBN">
-      <button ng-click="editBook()">Update Book</button>
+      <button>Update Book</button>
     </form>
     <li><span ng-hide="editing" ng-click="editing = true">{{book.title}} - {{book.author}}</span><button ng-click="deleteBook()">Delete</button><span ng-hide="editing" ng-click="editing = true"><button>Edit</button></span></li>
   </ul>

@@ -18,6 +18,7 @@ BookApp.controller("BooksCtrl", ["$scope", "$http", ($scope, $http) ->
   $scope.editBook = ->
     # console.log @book
     $http.put("/books/#{@book.id}.json", @book).success (data) =>
+      @editing = !@editing
       # console.log "book updated"
 
   $scope.deleteBook = ->
