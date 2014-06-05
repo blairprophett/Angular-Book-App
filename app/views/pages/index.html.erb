@@ -17,7 +17,7 @@
       <input type="text" ng-model="book.isbn" placeholder="ISBN">
       <button ng-click="editBook()">Update Book</button>
     </form>
-    <li>{{book.title}} - {{book.author}}<button ng-click="deleteBook()">Delete</button><span ng-hide="editing" ng-click="editing = true"><button>Edit</button></span></li>
+    <li><span ng-hide="editing" ng-click="editing = true">{{book.title}} - {{book.author}}</span><button ng-click="deleteBook()">Delete</button><span ng-hide="editing" ng-click="editing = true"><button>Edit</button></span></li>
   </ul>
 
 </div>
