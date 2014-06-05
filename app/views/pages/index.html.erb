@@ -1,0 +1,23 @@
+<h1>Book App</h1>
+
+<div ng-controller="BooksCtrl">
+
+  <form ng-submit="addBook()">
+    <input type="text" ng-model="newBook.title" placeholder="Title">
+    <input type="text" ng-model="newBook.author" placeholder="Author">
+    <input type="text" ng-model="newBook.description" placeholder="Description">
+    <button>Add Book</button>
+  </form>
+
+  <ul ng-repeat="book in books">
+    <form ng-show="editing" ng-submit="editing = false">
+      <input type="text" ng-model="book.title" placeholder="Title">
+      <input type="text" ng-model="book.author" placeholder="Author">
+      <input type="text" ng-model="book.description" placeholder="Description">
+      <input type="text" ng-model="book.isbn" placeholder="ISBN">
+      <button ng-click="editBook()">Update Book</button>
+    </form>
+    <li>{{book.title}} - {{book.author}}<button ng-click="deleteBook()">Delete</button><span ng-hide="editing" ng-click="editing = true"><button>Edit</button></span></li>
+  </ul>
+
+</div>
